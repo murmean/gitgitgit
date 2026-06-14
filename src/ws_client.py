@@ -27,6 +27,7 @@ class KrakenWS:
             self.ws = websocket.WebSocket()
             self.ws.settimeout(self.timeout)
             self.ws.connect(self.url)
+            log.info("Connection established")
         except Exception as e:
             log.error(f"Failed to establish connection: {e}")
             raise

@@ -2,6 +2,7 @@ import pytest
 
 from src.ws_client import KrakenWS
 
+
 @pytest.fixture
 def ticker_subscribe():
     client = KrakenWS()
@@ -10,6 +11,7 @@ def ticker_subscribe():
     output = client.receive_message("method", "subscribe")
     client.close_connection()
     return output
+
 
 @pytest.fixture
 def ticker_snapshot():
@@ -20,18 +22,48 @@ def ticker_snapshot():
     client.close_connection()
     return output
 
+
+def ticker_stream_is_alive():
+    client = KrakenWS()
+    client.connect()
+    client.subscribe("ticker", "BTC/USD")
+
+    messages = []
+
+    for _ in range(2):
+        msg = client.receive_message("channel", "ticker")
+        messages.append(msg)
+
+    client.close_connection()
+
+    assert len(messages) == 2
+
+
+def test_receive_message_times_out_when_expected_message_is_missing():
+    client = KrakenWS(timeout=1)
+    client.connect()
+
+    with pytest.raises(TimeoutError):
+        client.receive_message("channel", "ticker", max_messages=2)
+
+    client.close_connection()
+
+
 def test_ticker_subscribe(ticker_subscribe):
     assert ticker_subscribe["method"] == "subscribe"
     assert ticker_subscribe["success"] is True
+
 
 def test_ticker_subscribe_results(ticker_subscribe):
     assert ticker_subscribe["result"]["channel"] == "ticker"
     assert ticker_subscribe["result"]["symbol"] == "BTC/USD"
     assert ticker_subscribe["result"]["event_trigger"] == "trades"
 
+
 def test_ticker_snapshot(ticker_snapshot):
     assert ticker_snapshot["channel"] == "ticker"
     assert ticker_snapshot["type"] in ["snapshot", "update"]
+
 
 def test_ticker_snapshot_data(ticker_snapshot):
     data = ticker_snapshot["data"][0]
@@ -42,6 +74,7 @@ def test_ticker_snapshot_data(ticker_snapshot):
     assert data["last"] > 0
     assert data["volume"] >= 0
     assert "timestamp" in data
+
 
 def test_ticker_bids_not_greater_than_asks(ticker_snapshot):
     data = ticker_snapshot["data"][0]

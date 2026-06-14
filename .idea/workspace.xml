@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea6350e3-1886-466f-b736-22f7b45ceaf9" name="Changes" comment="" />
+    <list default="true" id="ea6350e3-1886-466f-b736-22f7b45ceaf9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ws_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ws_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_ticker.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_ticker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_trade.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_trade.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +40,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.Python tests for tests.test_book.test_subscribe_to_book_channel.executor": "Run",
+    "Python tests.Python tests for tests.test_ticker.test_reconnect_recovers_stream.executor": "Run",
     "Python tests.Python tests for tests.test_ticker.test_ticker_snapshot.executor": "Run",
     "Python tests.Python tests for tests.test_ticker.test_ticker_subscribe.executor": "Run",
     "Python tests.Python tests for tests.test_trade.test_trade_subscribe.executor": "Run",
@@ -44,7 +52,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/murmean/Desktop/kraken-assessment",
     "node.js.detected.package.eslint": "true",
@@ -60,8 +70,8 @@
     <option name="myAttachToSubprocess" value="false" />
     <option name="mySupportGeventDebugging" value="true" />
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_trade.py">
-    <configuration name="Python tests for tests.test_trade.test_trade_timestamps_increase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests in test_connection.py">
+    <configuration name="Python tests for tests.test_ticker.test_reconnect_recovers_stream" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="kraken-assessment" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,11 +85,11 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_trade.test_trade_timestamps_increase&quot;" />
+      <option name="_new_target" value="&quot;tests.test_ticker.test_reconnect_recovers_stream&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_book.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_connection.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="kraken-assessment" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,7 +103,25 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_book.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_connection.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_errors.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="kraken-assessment" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_errors.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -133,31 +161,13 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="kraken-assessment" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in test_trade.py" />
-        <item itemvalue="Python tests.Python tests for tests.test_trade.test_trade_timestamps_increase" />
-        <item itemvalue="Python tests.Python tests in test_book.py" />
-        <item itemvalue="Python tests.Python tests in tests" />
+        <item itemvalue="Python tests.Python tests in test_connection.py" />
+        <item itemvalue="Python tests.Python tests in test_errors.py" />
         <item itemvalue="Python tests.Python tests in test_ticker.py" />
+        <item itemvalue="Python tests.Python tests for tests.test_ticker.test_reconnect_recovers_stream" />
+        <item itemvalue="Python tests.Python tests in test_trade.py" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1781446468780</updated>
       <workItem from="1781446472588" duration="1420000" />
-      <workItem from="1781452044751" duration="7225000" />
+      <workItem from="1781452044751" duration="10549000" />
     </task>
     <servers />
   </component>
@@ -184,6 +194,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/kraken_assessment$.coverage" NAME=" Coverage Results" MODIFIED="1781460802681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kraken_assessment$.coverage" NAME=" Coverage Results" MODIFIED="1781462463961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
