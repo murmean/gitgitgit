@@ -1,50 +1,64 @@
 from src.ws_client import KrakenWS
+import pytest
 
 
-def test_connection_opens():
+@pytest.fixture
+def connected_client():
     client = KrakenWS()
     client.connect()
 
-    assert client.ws is not None
-    assert client.ws.connected is True
+    yield client
 
     client.close_connection()
 
 
-def test_reconnect_recovers_stream():
-    client = KrakenWS()
-    client.connect()
-    client.subscribe("ticker", "BTC/USD")
+def test_heartbeat_messages_are_received(connected_client):
+    connected_client.subscribe(
+        "ticker",
+        "BTC/USD"
+    )
 
-    first = client.receive_message("channel", "ticker")
+    heartbeat = connected_client.receive_message(
+        "channel",
+        "heartbeat"
+    )
+
+    assert heartbeat["channel"] == "heartbeat"
+
+
+def test_connection_opens(connected_client):
+    assert connected_client.ws is not None
+    assert connected_client.ws.connected is True
+
+
+def test_reconnect_recovers_stream(connected_client):
+    connected_client.subscribe("ticker", "BTC/USD")
+
+    first = connected_client.receive_message("channel", "ticker")
     assert first["channel"] == "ticker"
 
-    client.close_connection()
+    connected_client.close_connection()
 
-    client.connect()
-    client.subscribe("ticker", "BTC/USD")
+    connected_client.connect()
 
-    second = client.receive_message("channel", "ticker")
-    client.close_connection()
+    connected_client.subscribe("ticker", "BTC/USD")
+
+    second = connected_client.receive_message("channel", "ticker")
 
     assert second["channel"] == "ticker"
 
 
-def test_multi_channel_subscription_receives_messages():
-    client = KrakenWS()
-    client.connect()
-
-    client.subscribe("ticker", "BTC/USD")
-    client.subscribe("trade", "BTC/USD")
-    ticker_message = client.receive_message(
+def test_multi_channel_subscription_receives_messages(connected_client):
+    connected_client.subscribe("ticker", "BTC/USD")
+    connected_client.subscribe("trade", "BTC/USD")
+    ticker_message = connected_client.receive_message(
         "channel",
         "ticker"
     )
-    trade_message = client.receive_message(
+    trade_message = connected_client.receive_message(
         "channel",
         "trade"
     )
-    client.close_connection()
 
     assert ticker_message["channel"] == "ticker"
     assert trade_message["channel"] == "trade"
