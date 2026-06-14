@@ -43,3 +43,9 @@ def test_book_prices_are_sorted(book_message):
 
 def test_book_quantities_are_positive(book_message):
     data = book_message["data"][0]
+
+    for bid in data["bids"]:
+        assert bid["qty"] > 0
+
+    for ask in data["asks"]:
+        assert ask["qty"] > 0

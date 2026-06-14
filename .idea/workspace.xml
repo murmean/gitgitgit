@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea6350e3-1886-466f-b736-22f7b45ceaf9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_ticker.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_ticker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1781446468780</updated>
       <workItem from="1781446472588" duration="1420000" />
-      <workItem from="1781452044751" duration="10850000" />
+      <workItem from="1781452044751" duration="11672000" />
     </task>
     <servers />
   </component>
@@ -191,6 +193,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/kraken_assessment$.coverage" NAME=" Coverage Results" MODIFIED="1781464788489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/kraken_assessment$.coverage" NAME=" Coverage Results" MODIFIED="1781465627522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

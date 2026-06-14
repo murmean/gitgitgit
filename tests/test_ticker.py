@@ -23,7 +23,7 @@ def ticker_snapshot():
     return output
 
 
-def ticker_stream_is_alive():
+def test_ticker_stream_is_alive():
     client = KrakenWS()
     client.connect()
     client.subscribe("ticker", "BTC/USD")
