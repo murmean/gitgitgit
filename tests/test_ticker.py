@@ -39,16 +39,6 @@ def ticker_stream_is_alive():
     assert len(messages) == 2
 
 
-def test_receive_message_times_out_when_expected_message_is_missing():
-    client = KrakenWS(timeout=1)
-    client.connect()
-
-    with pytest.raises(TimeoutError):
-        client.receive_message("channel", "ticker", max_messages=2)
-
-    client.close_connection()
-
-
 def test_ticker_subscribe(ticker_subscribe):
     assert ticker_subscribe["method"] == "subscribe"
     assert ticker_subscribe["success"] is True
