@@ -1,7 +1,7 @@
 import websocket
 import json
 import logging
-from constants import URL, default_timeout
+from src.constants import URL, default_timeout
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
