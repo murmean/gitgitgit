@@ -48,4 +48,3 @@ def test_multi_channel_subscription_receives_messages():
 
     assert ticker_message["channel"] == "ticker"
     assert trade_message["channel"] == "trade"
-    

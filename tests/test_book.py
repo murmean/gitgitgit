@@ -41,6 +41,7 @@ def test_book_prices_are_sorted(book_message):
     assert bid_prices == sorted(bid_prices, reverse=True)
     assert ask_prices == sorted(ask_prices)
 
+
 def test_book_quantities_are_positive(book_message):
     data = book_message["data"][0]
 
